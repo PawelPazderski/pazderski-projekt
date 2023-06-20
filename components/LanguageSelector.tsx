@@ -18,7 +18,7 @@ export const LanguageSelector = () => {
     <>
       {language === "en" && (
         <button
-          className={`rounded-md self-center`}
+          className={`rounded-md h-fit`}
           onClick={() => changeLanguage("pl" as Language)}
         >
           <Image
@@ -32,7 +32,7 @@ export const LanguageSelector = () => {
       )}
       {language === "pl" && (
         <button
-          className={`rounded-md self-center`}
+          className={`rounded-md h-fit`}
           onClick={() => changeLanguage("en" as Language)}
         >
           <Image

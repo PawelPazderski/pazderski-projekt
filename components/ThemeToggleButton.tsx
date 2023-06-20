@@ -16,7 +16,7 @@ function ThemeToggleButton() {
   };
 
   return (
-    <button onClick={toggleTheme} className="self-end">
+    <button onClick={toggleTheme} className="h-fit text-stone-500">
       {theme === 'light' ? <span className="material-symbols-rounded">dark_mode</span> : <span className="material-symbols-rounded">wb_sunny</span>}
     </button>
   );

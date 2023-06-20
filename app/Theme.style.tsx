@@ -14,7 +14,7 @@ function ThemeCSS() {
         --background-start-rgb: ${theme === 'light' ? '214, 219, 220' : '50, 50, 50'};
         --background-end-rgb: ${theme === 'light' ? '255, 255, 255' : '50, 50, 50'};
         --background-rgb: ${theme === 'light' ? '240, 240, 240' : '50, 50, 50'};
-        --border-rgb: ${theme === 'light' ? '150, 150, 150' : '205, 205, 205'};
+        --border-rgb: ${theme === 'light' ? '50, 50, 50' : '205, 205, 205'};
       }
 
       body {

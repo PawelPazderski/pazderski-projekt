@@ -8,7 +8,7 @@ const dictionary = {
   Home: {
     title: {
       en: "Welcome!",
-      pl: "Witam serdecznie!"
+      pl: "Witaj!"
     },
     about01: {
       en: "For over 5 years I have been working as a graphic designer in a graphic studio, dealing with costumers both individual and of a large printing house, where the studio is located. I design folders, catalogs, packaging and many other materials for printing and more. I also have the pleasure to be a lead graphic designer in the last eight editions of the ‘Osobowości i Sukcesy’ magazine.",
