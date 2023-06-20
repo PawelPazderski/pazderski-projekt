@@ -1,15 +1,18 @@
 'use client'
 
 import { useAtom } from 'jotai';
+import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
 import { themeAtom } from '@/store';
 import "material-symbols";
 
 function ThemeToggleButton() {
   const [theme, setTheme] = useAtom(themeAtom);
+  const [, setLocalTheme] = useLocalStorage("theme", "dark");
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
+    setLocalTheme(newTheme);
   };
 
   return (
