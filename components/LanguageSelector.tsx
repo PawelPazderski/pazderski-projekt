@@ -18,29 +18,29 @@ export const LanguageSelector = () => {
     <>
       {language === "en" && (
         <button
-          className={`rounded-md h-fit`}
+          className={`rounded-md h-fit mt-1`}
           onClick={() => changeLanguage("pl" as Language)}
         >
           <Image
-            className="rounded"
+            className="rounded w-6 h-auto"
             src="/flags/pl.svg"
             alt="polish"
-            width={24}
-            height={24}
+            width={0}
+            height={0}
           />
         </button>
       )}
       {language === "pl" && (
         <button
-          className={`rounded-md h-fit`}
+          className={`rounded-md h-fit mt-1`}
           onClick={() => changeLanguage("en" as Language)}
         >
           <Image
-            className="rounded"
+            className="rounded w-6 h-auto"
             src="/flags/en.svg"
             alt="english"
-            width={24}
-            height={24}
+            width={0}
+            height={0}
           />
         </button>
       )}

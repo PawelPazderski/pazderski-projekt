@@ -29,3 +29,7 @@
 /* .material-symbols-rounded {
   color: red
 } */
+
+.active {
+  color: rgb(150, 150, 150);
+}

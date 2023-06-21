@@ -38,7 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeCSS />
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

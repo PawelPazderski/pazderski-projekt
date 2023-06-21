@@ -32,8 +32,8 @@ function ThemeCSS() {
         color: ${theme === 'light' ? '150, 150, 150' : '205, 205, 205'};
 
         &:hover {
-          border-color: rgb(237, 206, 7);
-          color: rgb(237, 206, 7);
+          border-color: rgb(250 204 21);
+          color: rgb(250 204 21);
         }
       }
     `}</style>
