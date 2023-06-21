@@ -79,7 +79,7 @@ export const Navigation = () => {
                 {menuItems.map((item) => (
                   <li key={item.id}>
                     <Link
-                      className={`${isActive(item.link)} hover:text-yellow-400`}
+                      className={`${isActive(item.link)} hover:text-yellow-600`}
                       href={item.link}
                     >
                       {item.name}
@@ -110,7 +110,7 @@ export const Navigation = () => {
                       <Link
                           className={`${isActive(
                           item.link
-                        )} hover:text-yellow-400`}
+                        )} hover:text-yellow-600`}
                         href={item.link}
                       >
                         {item.name}
