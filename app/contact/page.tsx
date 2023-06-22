@@ -1,44 +1,51 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { Input } from "@/components/Input";
 
 export default function Contact() {
-  const [isFocused, setIsFocused] = useState(false);
-  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [mail, setMail] = useState("");
+  const [msg, setMsg] = useState("");
 
-  const handleFocus = () => {
-    setIsFocused(true);
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log({name: userName, email: mail, msg: msg});
   };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
-
 
   return (
     <main className="mx-auto px-2.5 max-w-screen-lg py-10 text-center">
-      <h1 className="mb-3 text-lg font-bold tracking-wider">Kontakt</h1>
-      <form className="flex flex-col gap-5 mx-auto max-w-screen-md">
-        <div className="relative">
-          <input
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-600 w-full text-gray-800"
-            type="text"
-            id="input1"
-            value={name}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onChange={e => setName(e.target.value)}
-            required
-          />
-          <label
-            className={`absolute top-2 left-3 transition-all duration-300 transform ${
-              isFocused || name ? '-translate-y-7 text-sm' : 'translate-y-0 text-base'
-            } text-gray-400`}
-            htmlFor="input1"
-          >
-          Name
-          </label>
-        </div>
+      <h1 className="mb-5 text-lg font-bold tracking-wider">Kontakt</h1>
+      <form
+        className="flex flex-col gap-6 mx-auto max-w-screen-sm"
+        onSubmit={submitForm}
+      >
+        <Input
+          value={userName}
+          name="name"
+          label="Name"
+          onChange={(e) => setUserName(e.currentTarget.value)}
+        />
+        <Input
+          value={mail}
+          name="email"
+          label="Mail"
+          onChange={(e) => setMail(e.currentTarget.value)}
+        />
+        <Input
+          value={msg}
+          name="msg"
+          label="Message"
+          onChange={(e) => setMsg(e.currentTarget.value)}
+          textarea
+        />
+        <button
+          type="submit"
+          className="bg-gray-400 hover:bg-yellow-600 font-bold py-2 px-4 rounded"
+        >
+          Send
+        </button>
       </form>
     </main>
   );
