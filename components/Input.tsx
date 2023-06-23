@@ -121,7 +121,7 @@ export const Input = ({
         </p>
 
       <label
-        className={`absolute top-2 left-3 transition-all duration-300 transform ${
+        className={`cursor-text absolute top-2 left-3 transition-all duration-300 transform ${
           isFocused || value
             ? "-translate-y-7 text-sm"
             : "translate-y-0 text-base"

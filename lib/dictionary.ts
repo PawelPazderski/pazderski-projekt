@@ -39,7 +39,7 @@ const dictionary = {
   },
   Contact: {
     title: {
-      en: "Write to me",
+      en: "Contact me",
       pl: "Napisz do mnie"
     },
     form: {
