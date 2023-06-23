@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useTranslate } from "@/lib/hooks/useTranslate";
-import { Navigation } from "@/components/Navigation";
 
 export default function Home() {
   const { t, dict } = useTranslate("Home");

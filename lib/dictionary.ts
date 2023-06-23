@@ -37,6 +37,60 @@ const dictionary = {
       pl: "Branża IT interesuje mnie od dłuższego czasu - szukam nowych wyzwań i przede wszystkim możliwości rozwoju zawodowego. Pierwsze kroki stawiałem na kursie Frontend Developer - React. Udział w patronacie intive 2023 dał mi możliwość udziału w dużym projekcie i poznania nowych technologii. Przede mną jeszcze z pewnością sporo nauki, ale tej się nie boję. Wiem, że to moja droga na przyszłość."
     },
   },
+  Contact: {
+    title: {
+      en: "Write to me",
+      pl: "Napisz do mnie"
+    },
+    form: {
+      name: {
+        en: "Name",
+        pl: "Imię",
+      },
+      email: {
+        en: "Email",
+        pl: "Email",
+      },
+      msg: {
+        en: "Your message",
+        pl: "Twoja wiadomość",
+      },
+      button: {
+        en: "Send",
+        pl: "Wyślij",
+      },
+    },
+    formErrors: {
+      emptyName: {
+        en: "Name is required",
+        pl: "Imię wymagane",
+      },
+      shortName: {
+        en: "Min. 2 digits",
+        pl: "Min. 2 znaki",
+      },
+      emptyEmail: {
+        en: "Email is required",
+        pl: "Email wymagany",
+      },
+      invalidEmail: {
+        en: "Invalid email",
+        pl: "Błędny adres email",
+      },
+      emptyMsg: {
+        en: "Message is empty",
+        pl: "Brak wiadomości",
+      },
+      shortMsg: {
+        en: "Min. 10 digits",
+        pl: "Min. 10 znaków",
+      },
+      longMsg: {
+        en: "Max. 250 digits",
+        pl: "Maks. 250 znaków",
+      },
+    },
+  },
 }
 
 
