@@ -6,6 +6,7 @@ import { useAtom } from "jotai";
 import emailjs from '@emailjs/browser';
 import { languageAtom } from "@/store";
 import { useTranslate } from "@/lib/hooks/useTranslate";
+import { useToast } from "@/components/Toast";
 import { Input, ErrorResponse } from "@/components/Input";
 
 
@@ -18,7 +19,8 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [lang] = useAtom(languageAtom);
   const { t, dict } = useTranslate("Contact");
-  const { title, form, formErrors } = dict;
+  const showToast = useToast();
+  const { title, form, formErrors, toastInfo } = dict;
 
   const userData = { name: userName, email: mail, msg: msg };
 
@@ -71,12 +73,14 @@ export default function Contact() {
     setMail("");
     setMsg("");
 
-    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID as string, process.env.NEXT_PUBLIC_TEMPLATE_ID as string, formRef.current as HTMLFormElement, process.env.NEXT_PUBLIC_KEY as string)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    showToast({ variant: "confirm", message: t(toastInfo.confirm) });
+
+    // emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID as string, process.env.NEXT_PUBLIC_TEMPLATE_ID as string, formRef.current as HTMLFormElement, process.env.NEXT_PUBLIC_KEY as string)
+    //   .then((result) => {
+    //       console.log(result.text);
+    //   }, (error) => {
+    //       console.log(error.text);
+    //   });
     
   };
   

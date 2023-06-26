@@ -4,6 +4,7 @@ import "./globals.css";
 import { useEffect } from "react";
 import { Montserrat } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
+import { ToastHoast } from "@/components/Toast";
 import { languageAtom, themeAtom } from "@/store";
 import { useSetAtom } from "jotai";
 import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeCSS />
       <body className={montserrat.className}>
+        <ToastHoast />
         <Navigation />
         {children}
       </body>

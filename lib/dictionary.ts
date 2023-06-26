@@ -90,6 +90,12 @@ const dictionary = {
         pl: "Maks. 250 znaków",
       },
     },
+    toastInfo: {
+      confirm: {
+        en: "Message was sent successfully",
+        pl: "Wiadomość została wysłana pomyślnie"
+      }
+    }
   },
 }
 

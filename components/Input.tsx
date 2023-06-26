@@ -97,7 +97,7 @@ export const Input = ({
   return (
     <div className="relative">
       {!textarea && <input
-        className={`px-3 py-2 mb-1 border ${(errorMsg && errorMsg[name as string]) ? "border-red-500" :"border-gray-300"} rounded-md focus:outline-none focus:border-yellow-600 w-full text-gray-800`}
+        className={`px-3 py-2 mb-1 border ${(errorMsg && errorMsg[name as string]) ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:border-yellow-600 w-full text-gray-800`}
         type={type}
         id={id || name}
         value={value}
@@ -107,7 +107,7 @@ export const Input = ({
         onChange={handleChange}
       /> }
       {textarea && <textarea
-        className={`px-3 py-2 border ${(errorMsg && errorMsg[name as string]) ? "border-red-500" :"border-gray-300"} rounded-md focus:outline-none focus:border-yellow-600 w-full text-gray-800 resize-none`}
+        className={`px-3 py-2 border ${(errorMsg && errorMsg[name as string]) ? "border-red-500" : "border-gray-300"} rounded-md focus:outline-none focus:border-yellow-600 w-full text-gray-800 resize-none`}
         id={id || name}
         value={value}
         name={name}
