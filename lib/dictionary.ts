@@ -3,7 +3,7 @@ const dictionary = {
     theme:{
       en: "Motive",
       pl: "Motyw"
-    }
+    },
   },
   Home: {
     menu: {
@@ -94,7 +94,11 @@ const dictionary = {
       confirm: {
         en: "Message was sent successfully",
         pl: "Wiadomość została wysłana pomyślnie"
-      }
+      },
+      error: {
+        en: "Oops, something went wrong",
+        pl: "Coś poszło nie tak"
+      },
     }
   },
 }
