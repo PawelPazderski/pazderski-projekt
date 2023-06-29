@@ -31,7 +31,7 @@ export const ToastHoast = () => {
 
   return (
     <Toast.Provider
-      duration={3000}
+      duration={4000}
       label={"Notification window"}
       swipeDirection={"up"}
       swipeThreshold={30}>
@@ -40,10 +40,10 @@ export const ToastHoast = () => {
         onOpenChange={() => setToast(initialToast)}
         asChild>
         <div className={`flex flex-col gap-3  ${variant === "confirm" ? "bg-lime-700" : "bg-red-600"} rounded p-2`}>
-          <Toast.Close className="fixed top-2 right-2">
+          <Toast.Close className="fixed top-2 right-2 text-white">
               <span className="material-symbols-rounded" style={{ fontSize:"0.9em" }}>close</span>
           </Toast.Close>
-          <Toast.Title className="flex flex-col gap-3 text-center">
+          <Toast.Title className="flex flex-col gap-3 text-center text-white">
             <span className="material-symbols-rounded" style={{ fontSize:"2em" }}>{iconMap[variant]}</span>
             {message}
           </Toast.Title>

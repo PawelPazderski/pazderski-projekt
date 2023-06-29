@@ -55,6 +55,10 @@ const dictionary = {
         en: "Your message",
         pl: "Twoja wiadomość",
       },
+      agreeInfo: {
+        en: "I consent to the processing of the data provided in the form in order to reply to my message.",
+        pl: "Wyrażam zgodę na przetwarzanie danych podanych w formularzu w celu udzielenia odpowiedzi na moją wiadomość.",
+      },
       button: {
         en: "Send",
         pl: "Wyślij",
@@ -88,6 +92,10 @@ const dictionary = {
       longMsg: {
         en: "Max. 250 digits",
         pl: "Maks. 250 znaków",
+      },
+      agree: {
+        en: "Agree required",
+        pl: "Wymagana zgoda",
       },
     },
     toastInfo: {

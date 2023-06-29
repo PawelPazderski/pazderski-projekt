@@ -8,21 +8,24 @@ import { languageAtom } from "@/store";
 import { useTranslate } from "@/lib/hooks/useTranslate";
 import { useToast } from "@/components/Toast";
 import { Input, ErrorResponse } from "@/components/Input";
+import FormCheckbox from "@/components/CheckBox";
 
 
 export default function Contact() {
   const [userName, setUserName] = useState("");
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
+  const [agree, setAgree] = useState(false);
   const [errorMsg, setErrorMsg] = useState<Record<string, string> | null>({});
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const [lang] = useAtom(languageAtom);
-  const { t, dict } = useTranslate("Contact");
   const showToast = useToast();
+
+  const { t, dict } = useTranslate("Contact");
   const { title, form, formErrors, toastInfo } = dict;
 
-  const userData = { name: userName, email: mail, msg: msg };
+  const userData = { name: userName, email: mail, msg: msg, agree: agree };
 
   useEffect(() => {
     setErrorMsg({})
@@ -32,11 +35,12 @@ export default function Contact() {
     name: z.string().nonempty(t(formErrors.emptyName)).min(2, t(formErrors.shortName)),
     email: z.string().nonempty(t(formErrors.emptyEmail)).email(t(formErrors.invalidEmail)),
     msg: z.string().nonempty(t(formErrors.emptyMsg)).min(10, t(formErrors.shortMsg)).max(250, t(formErrors.longMsg)),
+    agree: z.boolean().refine(value => value === true, { message: t(formErrors.agree)}),
   });
 
-  let errors = [];
+  let errors: string[] = [];
 
-  const validateValue = (name: string, value:string) => {
+  const validateValue = (name: string, value: string | boolean) => {
     try {
       schema.pick({ [name]: true }).parse({ [name]: value });
       setErrorMsg(prev => (
@@ -44,7 +48,7 @@ export default function Contact() {
           ...prev,
           [name]: ""
         })); // No error message if validation succeeds
-      errors = [];
+        errors = errors.filter((error) => error !== name);
     } catch (error) {
       const errorObject = JSON.parse(error as string)[0] as ErrorResponse;
       setErrorMsg(prev => (
@@ -52,7 +56,7 @@ export default function Contact() {
           ...prev,
           [name]: errorObject.message
         }));
-      errors.push(errorObject.message)
+      errors.push(name)
     }
   };
 
@@ -72,6 +76,7 @@ export default function Contact() {
     setUserName("");
     setMail("");
     setMsg("");
+    setAgree(false);
 
     showToast({ variant: "confirm", message: t(toastInfo.confirm) });
 
@@ -83,7 +88,7 @@ export default function Contact() {
     //   });
     
   };
-  
+
   return (
     <main className="mx-auto px-2.5 max-w-screen-lg py-10 text-center">
       <h1 className="mb-5 text-lg font-bold tracking-wider">{t(title)}</h1>
@@ -114,6 +119,7 @@ export default function Contact() {
           onChange={(e) => setMsg(e.currentTarget.value)}
           textarea
         />
+        <FormCheckbox disagreed={ errorMsg ? errorMsg.agree : "" } onCheckedChange={e => setAgree(e)} checked={agree} />
         <button
           type="submit"
           className="disabled:bg-gray-200 disabled:hover:bg-gray-200 bg-gray-400 hover:bg-yellow-600 font-bold py-2 px-4 rounded"
