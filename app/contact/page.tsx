@@ -10,7 +10,6 @@ import { useToast } from "@/components/Toast";
 import { Input, ErrorResponse } from "@/components/Input";
 import FormCheckbox from "@/components/CheckBox";
 
-
 export default function Contact() {
   const [userName, setUserName] = useState("");
   const [mail, setMail] = useState("");

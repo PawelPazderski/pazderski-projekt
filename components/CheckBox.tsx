@@ -23,7 +23,7 @@ const FormCheckbox = ( { checked, disagreed, onCheckedChange }: CheckboxProps ) 
         id="c1"
       >
         <Checkbox.Indicator>
-          <CheckIcon />
+          <CheckIcon className="h-5 w-5"/>
         </Checkbox.Indicator>
       </Checkbox.Root>
       <label className="text-[15px] text-left" htmlFor="c1">
@@ -31,8 +31,8 @@ const FormCheckbox = ( { checked, disagreed, onCheckedChange }: CheckboxProps ) 
       </label>
     </div>
     <p className="text-red-500 text-xs mt-[5px]">
-          {(disagreed && disagreed.length > 0) ? disagreed : "\u00A0"}
-        </p>
+      {(disagreed && disagreed.length > 0) ? disagreed : "\u00A0"}
+    </p>
   </div>
     
 );

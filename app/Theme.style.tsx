@@ -2,7 +2,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { themeAtom } from "./../store";
+import { themeAtom } from "@/store";
 
 function ThemeCSS() {
   const [theme] = useAtom(themeAtom);
@@ -19,6 +19,8 @@ function ThemeCSS() {
           : "50, 50, 50"};
         --background-rgb: ${theme === "light" ? "240, 240, 240" : "50, 50, 50"};
         --border-rgb: ${theme === "light" ? "50, 50, 50" : "205, 205, 205"};
+
+        box-sizing: border-box;
       }
 
       body {
