@@ -23,7 +23,7 @@ export const Navigation = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => {
-    return pathname === path ? "active" : "";
+    return pathname === path || (path != "/" && pathname.includes(path)) ? "active" : "";
   };
 
   const closeMenu = () => {

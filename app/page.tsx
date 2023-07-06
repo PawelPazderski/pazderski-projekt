@@ -14,7 +14,7 @@ export default function Home() {
         >
         <Image
           className="relative rounded-full mt-2 mb-8 md:mt-24 md:mb-16 w-32 md:w-48"
-          src="/pp_jc_foto.png"
+          src="https://hkidmdufpolahlcismnq.supabase.co/storage/v1/object/sign/jobs/graphics/pp_jc_foto.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJqb2JzL2dyYXBoaWNzL3BwX2pjX2ZvdG8uanBnIiwiaWF0IjoxNjg4NjM2NTYwLCJleHAiOjE3MjAxNzI1NjB9.BMtvFQbn-rUqiPSQaOOrD4HDoMcN7qb802M6OtWyTiA&t=2023-07-06T09%3A42%3A39.055Z"
           alt="Pawel Pazderski Image"
           width={200}
           height={200}
