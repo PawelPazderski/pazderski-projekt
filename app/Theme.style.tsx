@@ -19,6 +19,7 @@ function ThemeCSS() {
           : "50, 50, 50"};
         --background-rgb: ${theme === "light" ? "240, 240, 240" : "50, 50, 50"};
         --border-rgb: ${theme === "light" ? "50, 50, 50" : "205, 205, 205"};
+        --accent-rgb: 250 204 21;
 
         box-sizing: border-box;
       }
@@ -38,9 +39,21 @@ function ThemeCSS() {
         color: ${theme === "light" ? "150, 150, 150" : "205, 205, 205"};
 
         &:hover {
-          border-color: rgb(250 204 21);
-          color: rgb(250 204 21);
+          border-color: rgb(var(--accent-rgb));
+          color: rgb(var(--accent-rgb));
         }
+      }
+
+      .thumbs .thumb {
+        border-color: transparent
+      }
+
+      .thumbs .thumb.selected {
+        border-color: #666;
+      }
+
+      .thumbs .thumb:hover {
+        border-color: rgb(var(--accent-rgb));
       }
     `}</style>
   );

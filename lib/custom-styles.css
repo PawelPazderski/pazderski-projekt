@@ -1,0 +1,35 @@
+/* custom-styles.css */
+.image-gallery {
+  /* Change the background color of the main gallery container */
+  background-color: #f0f0f0;
+}
+
+.image-gallery-slide .image-gallery-image {
+  /* Change the background color of the slide */
+  background-color: #f0f0f0;
+}
+
+.image-gallery-thumbnails {
+  /* Change the background color of the thumbnail container */
+  background-color: #f0f0f0;
+}
+
+.image-gallery-thumbnail.active {
+  /* Change the background color of the active thumbnail */
+  background-color: #333;
+}
+
+.image-gallery-thumbnail:hover {
+  /* Change the background color of the thumbnail on hover */
+  background-color: #666;
+}
+
+.image-gallery-icon {
+  /* Change the color of the navigation icons (previous/next) */
+  color: #333;
+}
+
+.image-gallery-icon:hover {
+  /* Change the color of the navigation icons on hover */
+  color: #666;
+}
